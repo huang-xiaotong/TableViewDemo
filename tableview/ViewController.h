@@ -9,14 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-<UITabBarControllerDelegate, UITableViewDataSource>
+<UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *mTableView;
-//    NSArray *listData;
-    
-    
-//}
-//{
+
     NSArray *listData;
 }
 @property (nonatomic, retain) NSArray *listData;
