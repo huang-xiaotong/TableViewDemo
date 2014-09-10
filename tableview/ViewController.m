@@ -72,7 +72,7 @@ static NSString *cellIdentifier = @"cell";
     SecondLevelViewController *nextController = [[SecondLevelViewController alloc]init];
     [self.navigationController pushViewController:nextController animated:YES];
     
-//    [tableView deselectRowAtIndexPath:indexPath  animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath  animated:YES];
     
     }
 
