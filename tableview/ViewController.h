@@ -12,8 +12,9 @@
 <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *mTableView;
-
     NSArray *listData;
+    
 }
 @property (nonatomic, retain) NSArray *listData;
+@property (strong, nonatomic) UINavigationController *navController;
 @end

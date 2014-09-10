@@ -18,6 +18,7 @@
 		9A09BC7619BC47BA00D2AD4A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A09BC7519BC47BA00D2AD4A /* Default-568h@2x.png */; };
 		9A09BC7919BC47BA00D2AD4A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A09BC7719BC47BA00D2AD4A /* MainStoryboard.storyboard */; };
 		9A09BC7C19BC47BA00D2AD4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A09BC7B19BC47BA00D2AD4A /* ViewController.m */; };
+		9A4EE9E419BEFDC300B731FD /* SecondLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4EE9E319BEFDC300B731FD /* SecondLevelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		9A09BC7819BC47BA00D2AD4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9A09BC7A19BC47BA00D2AD4A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9A09BC7B19BC47BA00D2AD4A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9A4EE9E219BEFDC300B731FD /* SecondLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondLevelViewController.h; sourceTree = "<group>"; };
+		9A4EE9E319BEFDC300B731FD /* SecondLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondLevelViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +59,7 @@
 		9A09BC5319BC47B900D2AD4A = {
 			isa = PBXGroup;
 			children = (
-				9A09BC6519BC47B900D2AD4A /* tableview */,
+				9A09BC6519BC47B900D2AD4A /* TableView */,
 				9A09BC5E19BC47B900D2AD4A /* Frameworks */,
 				9A09BC5D19BC47B900D2AD4A /* Products */,
 			);
@@ -80,7 +83,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A09BC6519BC47B900D2AD4A /* tableview */ = {
+		9A09BC6519BC47B900D2AD4A /* TableView */ = {
 			isa = PBXGroup;
 			children = (
 				9A09BC6E19BC47B900D2AD4A /* AppDelegate.h */,
@@ -89,7 +92,10 @@
 				9A09BC7A19BC47BA00D2AD4A /* ViewController.h */,
 				9A09BC7B19BC47BA00D2AD4A /* ViewController.m */,
 				9A09BC6619BC47B900D2AD4A /* Supporting Files */,
+				9A4EE9E219BEFDC300B731FD /* SecondLevelViewController.h */,
+				9A4EE9E319BEFDC300B731FD /* SecondLevelViewController.m */,
 			);
+			name = TableView;
 			path = tableview;
 			sourceTree = "<group>";
 		};
@@ -176,6 +182,7 @@
 				9A09BC6C19BC47B900D2AD4A /* main.m in Sources */,
 				9A09BC7019BC47B900D2AD4A /* AppDelegate.m in Sources */,
 				9A09BC7C19BC47BA00D2AD4A /* ViewController.m in Sources */,
+				9A4EE9E419BEFDC300B731FD /* SecondLevelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

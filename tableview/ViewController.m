@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SecondLevelViewController.h"
 
 @interface ViewController ()
 
@@ -26,8 +27,9 @@
     mTableView.delegate = self;
     mTableView.dataSource = self;
 
-    NSArray *array = [[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];//创建固定数组
+    NSArray *array = [[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];//创建数组
     self.listData = array;
+    
 }
 
 - (void)viewDidUnload{
@@ -41,21 +43,38 @@
 }
 
 
-//#pragma mark - 
+#pragma mark - 
 //实现TableView数据源方法
 #pragma mark Table View Data Source Methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.listData count];
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-static NSString *tableviewIdentifier = @"tableviewIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:tableviewIdentifier];
+static NSString *cellIdentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:cellIdentifier];
     if (cell == nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableviewIdentifier ];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listData objectAtIndex:row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
+   
+
 }
-//      reload tableView;
+#pragma mark -
+#pragma mark Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SecondLevelViewController *nextController = [[SecondLevelViewController alloc]init];
+    [self.navigationController pushViewController:nextController animated:YES];
+    
+//    [tableView deselectRowAtIndexPath:indexPath  animated:YES];
+    
+    }
+
+
 @end
