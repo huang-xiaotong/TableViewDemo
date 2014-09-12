@@ -27,7 +27,7 @@
     mTableView.delegate = self;
     mTableView.dataSource = self;
 
-    NSArray *array = [[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];//创建数组
+    NSArray *array = [[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17", nil];//创建数组
     self.listData = array;
     
 }
@@ -55,7 +55,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 static NSString *cellIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableHeaderFooterViewWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
@@ -67,14 +67,11 @@ static NSString *cellIdentifier = @"cell";
 
 }
 #pragma mark -
-#pragma mark Table view delegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+#pragma mark Table View Delegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {  
     SecondLevelViewController *nextController = [[SecondLevelViewController alloc]init];
     [self.navigationController pushViewController:nextController animated:YES];
-    
-    [tableView deselectRowAtIndexPath:indexPath  animated:YES];
-    
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-
+}
 @end
