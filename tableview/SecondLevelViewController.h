@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SecondLevelViewController : UIViewController{
-
+UITableView *mTableView;
 }
 
 @end

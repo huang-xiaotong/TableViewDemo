@@ -57,25 +57,35 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-static NSString *cellIdentifier = @"cell";
+    static NSString *cellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        CGRect labelRect = CGRectMake(120, 20, 200, 40);
-        UILabel *label = [[UILabel alloc] initWithFrame:labelRect];
-//        UIView * subview = [[UIView alloc] init];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        //创建第一个label
+        CGRect labelRect = CGRectMake(120, 10,130, 20);
+        UILabel *label = [[UILabel alloc] initWithFrame:labelRect];        
         label.text = @"hello world!!!";
-//        label.backgroundColor = [UIColor blueColor];
-        label.textColor = [UIColor blueColor];
-        label.font = [UIFont boldSystemFontOfSize:30];
-//        [cell.contentView addSubview:subview];
         [cell.contentView addSubview:label];
-
-        label.userInteractionEnabled = YES;
-    }
+        label.textColor = [UIColor redColor];
+//        label.backgroundColor = [UIColor blueColor];
+        label.font = [UIFont boldSystemFontOfSize:16];
+        //创建第二个label
+        CGRect secondlabelRect = CGRectMake(120, 30, 100, 20);
+        UILabel *secondlabel = [[UILabel alloc] initWithFrame:secondlabelRect];
+        secondlabel.text = @"hello world!!!";
+        [cell.contentView addSubview:secondlabel];
+        secondlabel.textColor = [UIColor grayColor];
+        secondlabel.font = [UIFont boldSystemFontOfSize:12];
+        //创建button
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(300,30,100,20);
+        [button setTitle:@"button" forState:UIControlStateNormal];
+        cell.accessoryView = button;
+        }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listData objectAtIndex:row];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.detailTextLabel.text = @"test";
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.imageView.image = [UIImage imageNamed:@"meitu@2x.png"];
     return cell;
    
