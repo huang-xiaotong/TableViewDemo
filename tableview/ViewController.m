@@ -63,10 +63,21 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         //创建第一个label
         CGRect labelRect = CGRectMake(120, 10,130, 20);
-        UILabel *label = [[UILabel alloc] initWithFrame:labelRect];        
-        label.text = @"hello world!!!";
+        UILabel *label = [[UILabel alloc] initWithFrame:labelRect];
+        if(indexPath.row == 0){
+            label.text = @"hello world!!!";
+            label.textColor = [UIColor redColor];
+        }
+        else if(indexPath.row == 1){
+            label.text = @"hello world!!!";
+            label.textColor = [UIColor greenColor];}
+        else{
+            label.text = @"hello world!!!";
+            label.textColor = [UIColor blueColor];
+        }
+        
         [cell.contentView addSubview:label];
-        label.textColor = [UIColor redColor];
+//        label.textColor = [UIColor redColor];
 //        label.backgroundColor = [UIColor blueColor];
         label.font = [UIFont boldSystemFontOfSize:16];
         //创建第二个label
