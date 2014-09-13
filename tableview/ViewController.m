@@ -77,16 +77,22 @@
         secondlabel.textColor = [UIColor grayColor];
         secondlabel.font = [UIFont boldSystemFontOfSize:12];
         //创建button
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(300,30,100,20);
-        [button setTitle:@"button" forState:UIControlStateNormal];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        button.frame = CGRectMake(150,30,50,20);
+        [button setTitle:@"点击" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor blackColor];
         cell.accessoryView = button;
+
+//        UIImage *image = [UIImage imageNamed:@"meitu@2x.png"];
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+//        imageView.frame = CGRectMake(50, 10, 300, 300);
+//        imageView.backgroundColor = [UIColor redColor];
         }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listData objectAtIndex:row];
     cell.detailTextLabel.text = @"test";
 //    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.imageView.image = [UIImage imageNamed:@"meitu@2x.png"];
+//    cell.imageView.image = [UIImage imageNamed:@"meitu@2x.png"];
     return cell;
    
 
