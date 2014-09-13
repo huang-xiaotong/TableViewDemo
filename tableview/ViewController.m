@@ -83,10 +83,10 @@
         button.backgroundColor = [UIColor blackColor];
         cell.accessoryView = button;
 
-//        UIImage *image = [UIImage imageNamed:@"meitu@2x.png"];
-//        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//        imageView.frame = CGRectMake(50, 10, 300, 300);
-//        imageView.backgroundColor = [UIColor redColor];
+        UIImage *image = [UIImage imageNamed:@"meitu@2x.png"];       
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.frame = CGRectMake(50, 10, 45, 45);
+        [cell.contentView addSubview:imageView];
         }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listData objectAtIndex:row];
