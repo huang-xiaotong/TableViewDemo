@@ -27,8 +27,17 @@
     mTableView.delegate = self;
     mTableView.dataSource = self;
 
-    NSArray *array = [[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17", nil];//创建数组
-    self.listData = array;
+    NSArray *arrayt = [[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6", nil];//创建数组
+    self.listData = arrayt;
+    NSArray *arrayl = [[NSArray alloc]initWithObjects:@"one", @"two", @"three", @"four", @"five", @"six", nil];
+    self.listDatal = arrayl;
+//    NSDictionary * dict = [[NSDictionary alloc]initWithObjectsAndKeys:@"one", @"1", @"two",@"2", @"three",@"3",nil];
+//    [dict count];
+//    NSArray *values = [dict allValues];
+    
+    NSArray *arraym = [[NSArray alloc]initWithObjects:@"touxiang1.png", @"touxiang2.jpg", @"meitu@2x.png", @"touxiang3.jpg", @"touxiang4.jpg", @"touxiang5.jpg", nil];
+    self.listDatai = arraym;
+    
     
     }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -65,14 +74,14 @@
         CGRect labelRect = CGRectMake(120, 10,130, 20);
         UILabel *label = [[UILabel alloc] initWithFrame:labelRect];
         if(indexPath.row == 0){
-            label.text = @"hello world!!!";
+            label.text = [self.listData objectAtIndex:indexPath.row];
             label.textColor = [UIColor redColor];
         }
         else if(indexPath.row == 1){
-            label.text = @"hello world!!!";
+            label.text = [self.listData objectAtIndex:indexPath.row];
             label.textColor = [UIColor greenColor];}
         else{
-            label.text = @"hello world!!!";
+            label.text = [self.listData objectAtIndex:indexPath.row];
             label.textColor = [UIColor blueColor];
         }
         
@@ -83,7 +92,7 @@
         //创建第二个label
         CGRect secondlabelRect = CGRectMake(120, 30, 100, 20);
         UILabel *secondlabel = [[UILabel alloc] initWithFrame:secondlabelRect];
-        secondlabel.text = @"hello world!!!";
+        secondlabel.text = [self.listDatal objectAtIndex:indexPath.row];
         [cell.contentView addSubview:secondlabel];
         secondlabel.textColor = [UIColor grayColor];
         secondlabel.font = [UIFont boldSystemFontOfSize:12];
@@ -94,9 +103,11 @@
         button.backgroundColor = [UIColor blackColor];
         cell.accessoryView = button;
 
-        UIImage *image = [UIImage imageNamed:@"meitu@2x.png"];       
+        UIImage *image = [[UIImage alloc] init];
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         imageView.frame = CGRectMake(50, 10, 45, 45);
+        imageView.image =[UIImage imageNamed:[self.listDatai objectAtIndex:indexPath.row]];
+//        imageView.image = [UIImage imageNamed:@"touxiang1.png"];
         [cell.contentView addSubview:imageView];
         }
     NSUInteger row = [indexPath row];

@@ -14,6 +14,6 @@
     UITableView *mTableView;
 }
 @property (nonatomic, retain) NSArray *listData;
-//@property (strong, nonatomic) IBOutlet UILabel *lblTitle1;
-//@property (strong, nonatomic) IBOutlet UILabel *lblTitle2;
+@property (nonatomic, retain) NSArray *listDatal;
+@property (nonatomic, retain) NSArray *listDatai;
 @end
